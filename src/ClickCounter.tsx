@@ -7,7 +7,7 @@ import { Text } from './Text.tsx';
 export const ClickCounter = () => {
   const { clickCount } = React.useContext(AppContext);
 
-  if (clickCount < Steps.length) return null;
+  if (clickCount <= Steps.length) return null;
 
   return (
     <Box
