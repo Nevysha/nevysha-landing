@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+    # Name the image we build
+    image: nevysha-landing
+    # Give the container a name
+    container_name: nevysha-landing
+    # Port mapping
+    ports:
+      - "8080:80"
+    # Always restart the container if it stops
+    restart: always
