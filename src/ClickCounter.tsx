@@ -33,8 +33,14 @@ export const ClickCounter = () => {
           >
             <Text>
               Okay look, here's the{' '}
-              <Link sx={{ cursor: 'pointer' }}>github repository</Link> so you
-              can check by yourself.
+              <Link
+                target='_blank'
+                href='https://github.com/Nevysha/nevysha-landing'
+                sx={{ cursor: 'pointer' }}
+              >
+                github repository
+              </Link>{' '}
+              so you can check by yourself.
             </Text>
           </Stack>
         )}
