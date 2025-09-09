@@ -11,3 +11,11 @@ services:
       - "8080:80"
     # Always restart the container if it stops
     restart: always
+    # Add this section to connect to NPM's network
+    networks:
+      - nginx-proxy-manager_default
+
+# Declare the external network at the bottom
+networks:
+  nginx-proxy-manager_default:
+    external: true
