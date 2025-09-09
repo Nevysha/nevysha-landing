@@ -11,7 +11,6 @@ export const BlaBla = () => {
       spacing={2}
       sx={{
         position: 'fixed',
-        width: '100vw',
         justifyContent: 'center',
         padding: '20px',
       }}
