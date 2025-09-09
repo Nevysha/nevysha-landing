@@ -12,7 +12,8 @@ export const BlaBla = () => {
       sx={{
         position: 'fixed',
         justifyContent: 'center',
-        padding: '20px',
+        marginTop: '20px',
+        width: '100%',
       }}
     >
       <Text sx={{ fontSize: '40px' }}>Oh wow, there is a spinning cube.</Text>
