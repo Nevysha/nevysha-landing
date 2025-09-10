@@ -49,6 +49,7 @@ export const Steps = [
   </Text>,
   <StopStep />,
   <Text>Alright, alright... CONGRATULATIONS! You discovered the secret.</Text>,
+  <StopStep />,
   <Text>There is no secret.</Text>,
   <Text>There is no secret.</Text>,
   <Text>There is no secret.</Text>,
@@ -56,5 +57,6 @@ export const Steps = [
   <Text>There is no secret.</Text>,
   <Text>There is no secret.</Text>,
   <Text>There is no secret.</Text>,
+  <StopStep autonext={ false } />,
 ];
 

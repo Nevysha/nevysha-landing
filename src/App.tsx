@@ -15,7 +15,6 @@ function Box(props: ThreeElements['mesh']) {
   const [hovered, setHover] = useState(false);
 
   const isDisabled = disableStartMs + 2000 > Date.now();
-  console.log(isDisabled)
 
   useFrame((_state, delta) => {
     if (hovered) {
