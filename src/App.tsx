@@ -10,9 +10,13 @@ import { ClickCounter } from './ClickCounter.tsx';
 import { DevCheat } from './DevCheat.tsx';
 
 function Box(props: ThreeElements['mesh']) {
-  const { clickCount, increaseClickCount } = React.useContext(AppContext);
+  const { clickCount, increaseClickCount, disableStartMs, increaseVoidClickCount } = React.useContext(AppContext);
   const meshRef = useRef<THREE.Mesh>(null!);
   const [hovered, setHover] = useState(false);
+
+  const isDisabled = disableStartMs + 2000 > Date.now();
+  console.log(isDisabled)
+
   useFrame((_state, delta) => {
     if (hovered) {
       meshRef.current.rotation.x += delta * 0.5;
@@ -25,7 +29,13 @@ function Box(props: ThreeElements['mesh']) {
       {...props}
       ref={meshRef}
       scale={1}
-      onClick={() => increaseClickCount()}
+      onClick={() => {
+        if (isDisabled) {
+          increaseVoidClickCount();
+          return;
+        }
+        increaseClickCount();
+      }}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >

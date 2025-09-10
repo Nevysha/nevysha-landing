@@ -1,4 +1,5 @@
 import { Text } from './Text.tsx';
+import { StopStep } from './StopStep.tsx';
 
 export const Steps = [
   <Text>So cool. I love pink. Happy now ?</Text>,
@@ -46,6 +47,7 @@ export const Steps = [
   >
     Nothing. More. Here.
   </Text>,
+  <StopStep />,
   <Text>Alright, alright... CONGRATULATIONS! You discovered the secret.</Text>,
   <Text>There is no secret.</Text>,
   <Text>There is no secret.</Text>,
@@ -55,3 +57,4 @@ export const Steps = [
   <Text>There is no secret.</Text>,
   <Text>There is no secret.</Text>,
 ];
+

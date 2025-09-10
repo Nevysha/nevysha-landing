@@ -3,9 +3,10 @@ import * as React from 'react';
 import { AppContext } from './AppContext/AppContext.tsx';
 import { Steps } from './Steps.tsx';
 import { Text } from './Text.tsx';
+import { StopStep } from './StopStep';
 
 export const ClickCounter = () => {
-  const { clickCount } = React.useContext(AppContext);
+  const { clickCount, voidClickCount } = React.useContext(AppContext);
 
   if (clickCount <= Steps.length) return null;
 
@@ -19,12 +20,15 @@ export const ClickCounter = () => {
         text1lign: 'center',
       }}
     >
-      <Text>You lost your time by clicking {clickCount} times.</Text>
+      <Text>You lost your time by clicking {clickCount + voidClickCount} times.</Text>
       <Stack>
         {clickCount === Steps.length + 50 && (
+          <>
           <Text>
             You clicked 50 times more ? We clearly have a genius here.
           </Text>
+            <StopStep autonext={false}/>
+          </>
         )}
         {clickCount >= Steps.length + 51 && (
           <Stack
